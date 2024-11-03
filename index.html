@@ -69,9 +69,9 @@
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-            <a href="" class="navbar-brand p-0">
-                <h1 class="text-warning m-0"><i class="fa fa-map-marker-alt me-3"></i>Odisha-Destination</h1>
-                <!-- <img src="img/logo.png" alt="Logo"> -->
+            <a href="#" class="navbar-brand p-0">
+                <h1 class="text-warning m-0"><img src="img/logo.jpg" alt="Logo"></i>Odisha-Destination</h1>
+                <!-- <i class="fa fa-map-marker-alt me-3"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -104,8 +104,29 @@
                         <h1 class="display-3 text-white mb-3 animated slideInDown">Discover the Hidden Treasures of Odisha</h1>
                         <p class="fs-4 text-white mb-4 animated slideInDown">From the majestic temples of Puri to the tranquil beaches and lush forests, explore Odisha's vibrant heritage and natural beauty</p>
                         <div class="position-relative w-75 mx-auto animated slideInDown">
-                            <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Odisha">
-                            <button type="button" class="btn btn-warning rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button>
+                            <div class="container mt-5">
+                                <div class="search-container">
+                                    <input id="searchInput" class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Odisha">
+                                    <button id="searchButton" class="btn btn-warning rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Search</button>
+                                </div>
+                            </div>
+                        
+                            <script>
+                                document.getElementById("searchButton").addEventListener("click", function() {
+                                    const searchTerm = document.getElementById("searchInput").value;
+                                    if (searchTerm) {
+                                        // Redirect to table.html with the search term as a query parameter
+                                        window.location.href = `table.html?search=${encodeURIComponent(searchTerm)}`;
+                                    } else {
+                                        alert("Please enter a search term.");
+                                    }
+                                });
+                            </script>
+                        
+                            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                      
                         </div>
                     </div>
                 </div>
@@ -155,7 +176,60 @@
                         <p class="mb-0"><i class="fa fa-arrow-right text-warning me-2"></i>24/7 Dedicated Support</p>
                     </div>
                 </div>
-                <a class="btn btn-warning py-3 px-5 mt-2" href="">Learn More</a>
+                <body>
+                    <div class="container mt-5">
+                           
+                                        <button type="button" class="btn btn-warning py-3 px-1 mt-1" data-toggle="modal" data-target="#schedulerModal"> <i class="fas fa-calendar-alt"></i>Scheduler Time</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Modal -->
+                    <div class="modal fade" id="schedulerModal" tabindex="-1" aria-labelledby="schedulerModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div style="background: #ffc107; color: white;" class="modal-header">
+                                    <h5 class="modal-title" id="schedulerModalLabel">Schedule Your Time</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span>&times;</span>
+                                    </button>
+                                </div>
+                                <div style="padding: 30px;" class="modal-body">
+                                    <form id="schedulerForm">
+                                        <div class="form-group">
+                                            <label for="date">Select Date:</label>
+                                            <input type="date" class="form-control" id="date" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="time">Select Time:</label>
+                                            <input type="time" class="form-control" id="time" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="description">Description:</label>
+                                            <textarea class="form-control" id="description" rows="3" required></textarea>
+                                        </div>
+                                        <button type="submit" style="background-color: #ffc107; color: white;" class="btn btn-warning">Schedule</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                    <script>
+                        document.getElementById('schedulerForm').addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            alert("Scheduled successfully!");
+                            $('#schedulerModal').modal('hide'); // Hide modal after submission
+                        });
+                    </script>
+                </body>
+                </html>
+                
             </div>
         </div>
     </div>
@@ -177,8 +251,8 @@
                 <div class="service-item rounded pt-3">
                     <div class="p-4">
                         <i class="fa fa-3x fa-globe text-warning mb-4"></i>
-                        <h5>Worldwide Tours</h5>
-                        <p>Discover the world’s most captivating destinations with our expert-led, carefully curated tours that promise unforgettable experiences.</p>
+                        <h5>Odisha Tours</h5>
+                        <p>Discover the Odisha's most captivating destinations with our expert-led, carefully curated tours that promise unforgettable experiences.</p>
                     </div>
                 </div>
             </div>
