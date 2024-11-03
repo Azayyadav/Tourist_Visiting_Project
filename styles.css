@@ -11,8 +11,10 @@
 body {
     height: 100vh;
     width: 100%;
-    background: url("images/hero-bg.jpg") center/cover no-repeat;
+    background-color: orange;
 }
+
+
 
 header {
     position: fixed;
@@ -34,7 +36,7 @@ header {
 
 .navbar .hamburger-btn {
     display: none;
-    color: #fff;
+    color: #f7e200;
     cursor: pointer;
     font-size: 1.5rem;
 }
@@ -156,7 +158,7 @@ header {
 
 .form-box .form-details {
     width: 100%;
-    color: #fff;
+    color: #f0c400;
     max-width: 330px;
     text-align: center;
     display: flex;
@@ -248,7 +250,7 @@ form :where(.forgot-pass-link, .policy-text) {
 
 form button {
     width: 100%;
-    color: #fff;
+    color: #f1d608;
     border: none;
     outline: none;
     padding: 14px 0;
@@ -317,7 +319,7 @@ form button:hover {
         width: 100%;
         padding-top: 60px;
         text-align: center;
-        background: #fff;
+        background: #f6ce08;
         transition: 0.2s ease;
     }
 
